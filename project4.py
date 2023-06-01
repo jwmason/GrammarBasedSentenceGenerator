@@ -5,8 +5,9 @@
 
 
 def main() -> None:
-    pass
-
+    grammar_file = input()
+    sentence_count = int(input())
+    start_variable = input()
 
 if __name__ == '__main__':
     main()
