@@ -21,8 +21,9 @@ def sort_grammar_list(grammar_list) -> list:
             stack.append([])
         elif item == "}":
             if stack:
-                result.extend(stack.pop())
+                result.append(stack.pop())
         else:
             if stack:
                 stack[-1].append(item)
     return result
+

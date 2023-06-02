@@ -25,14 +25,14 @@ class TestSortGrammarList(unittest.TestCase):
         """Tests overall functionality"""
         # Test with a single pair of braces
         my_list = [1, 2, "{", 3, 4, "}", 5, 6]
-        expected_result = [3, 4]
+        expected_result = [[3, 4]]
         result = sort_grammar_list(my_list)
         self.assertEqual(result, expected_result)
 
     def test_multiple_pairs(self):
         """Test with multiple pairs of braces"""
         my_list = [1, 2, "{", 3, 4, "}", "{", 5, 6, 7, "}", 8]
-        expected_result = [3, 4, 5, 6, 7]
+        expected_result = [[3, 4], [5, 6, 7]]
         result = sort_grammar_list(my_list)
         self.assertEqual(result, expected_result)
 
