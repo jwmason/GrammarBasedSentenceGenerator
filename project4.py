@@ -10,10 +10,9 @@ def main() -> None:
     grammar_file = input()
     # sentence_count = int(input())
     # start_variable = input()
-    result = read_grammar_file(grammar_file)
-    print(result)
-    print(sort_grammar_list(result))
+    grammar_list = read_grammar_file(grammar_file)
+    sorted_grammar_list_of_lists = sort_grammar_list(grammar_list)
 
 
 if __name__ == '__main__':
-    main()
+  main()

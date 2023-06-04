@@ -2,4 +2,7 @@
 
 class Grammar:
     def __init__(self):
+        self.rules = {}
+
+    def generate_sentence_fragment(self):
         pass
