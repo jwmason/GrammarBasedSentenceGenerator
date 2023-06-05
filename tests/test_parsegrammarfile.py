@@ -13,4 +13,4 @@ class TestParsingFunctions(unittest.TestCase):
             ['Adjective', '1 happy', '1 perfect', '1 relaxing']
         ]
         grammar = parse_grammar_list(grammar_list_of_lists)
-        self.assertEqual(len(grammar.rules), 0)
+        self.assertEqual(len(grammar.rules), 1)

@@ -14,7 +14,7 @@ def main() -> None:
     sorted_grammar_list_of_lists = sort_grammar_list(grammar_list)
     print(sorted_grammar_list_of_lists)
     parsed_grammar_object = parse_grammar_list(sorted_grammar_list_of_lists)
-    print(parsed_grammar_object)
+    print(parsed_grammar_object.rules)
 
 
 if __name__ == '__main__':
