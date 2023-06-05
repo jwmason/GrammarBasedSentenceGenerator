@@ -11,6 +11,5 @@ class TestRule(unittest.TestCase):
         test_var = 'testvar'
         test_option = 'testoptionclassnotimplementedyet'
         test_rule = Rule(test_var, test_option)
-        test_rule.rules['testkey'] = 'testvalue'
         self.assertEqual(test_rule.variable, test_var)
         self.assertEqual(test_rule.options, test_option)
