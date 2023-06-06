@@ -41,6 +41,6 @@ class TestGrammar(unittest.TestCase):
         test_option = Option(1, [test_symbol])
         rule = Rule('A', [test_option])
         test_grammar.add_rule(rule)
-        retrieved_rule = test_grammar.generate_sentence_fragment('A')
+        retrieved_rule = test_grammar.generate_sentence('A')
         result = next(retrieved_rule)
         self.assertEqual(result, 'testsymbol')
