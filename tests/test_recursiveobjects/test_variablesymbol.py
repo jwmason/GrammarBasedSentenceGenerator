@@ -1,10 +1,11 @@
 """This module is in charge of testing variablesymbol.py"""
 
 import unittest
-import inspect
 from recursiveobjects.variablesymbol import VariableSymbol
 from recursiveobjects.grammar import Grammar
 from recursiveobjects.rule import Rule
+from recursiveobjects.option import Option
+from recursiveobjects.terminalsymbol import TerminalSymbol
 
 
 class TestVariableSymbol(unittest.TestCase):
@@ -17,10 +18,13 @@ class TestVariableSymbol(unittest.TestCase):
         self.assertEqual(test_variable_symbol.name, test_var)
         self.assertEqual(test_variable_symbol.grammar, test_grammar)
 
-    # Fix this test after completing Rule class
     def test_generate_sentence_fragment(self):
+        """This tests the generate_sentence_fragment()"""
         grammar = Grammar()
-        rule = Rule('test', 'testoptions')
-        grammar.rules['test'] = rule
+        test_option = Option(1, [TerminalSymbol('testresult')])
+        test_rule = Rule('test', [test_option])
+        grammar.rules['test'] = test_rule
         variablesymbol = VariableSymbol('test', grammar)
         generator = variablesymbol.generate_sentence_fragment()
+        result = ' '.join(str(fragment) for fragment in generator)
+        self.assertEqual(result, 'testresult')
