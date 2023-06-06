@@ -22,7 +22,7 @@ def parse_grammar_list(grammar_list_of_lists) -> Grammar:
             options.append(option)
         # Initialize Rule object
         rule = Rule(variable, options)
-    grammar.add_rule(rule)
+        grammar.add_rule(rule)
     return grammar
 
 

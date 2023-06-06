@@ -6,8 +6,8 @@ HowIsBoo
 {
 Adjective
 1 happy
-100 perfect
+1 perfect
 1 relaxing
-100 fulfilled
+1 fulfilled
 1 excited
 }

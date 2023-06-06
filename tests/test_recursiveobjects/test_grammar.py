@@ -33,3 +33,14 @@ class TestGrammar(unittest.TestCase):
         test_grammar.add_rule(rule)
         retrieved_rule = test_grammar.get_rule('A')
         self.assertEqual(retrieved_rule, rule)
+
+    def test_generate_sentence_fragment(self):
+        """This function tests generate_sentence_fragment()"""
+        test_grammar = Grammar()
+        test_symbol = TerminalSymbol('testsymbol')
+        test_option = Option(1, [test_symbol])
+        rule = Rule('A', [test_option])
+        test_grammar.add_rule(rule)
+        retrieved_rule = test_grammar.generate_sentence_fragment('A')
+        result = next(retrieved_rule)
+        self.assertEqual(result, 'testsymbol')
