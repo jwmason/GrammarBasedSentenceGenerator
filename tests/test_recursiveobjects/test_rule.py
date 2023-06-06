@@ -2,6 +2,8 @@
 
 import unittest
 from recursiveobjects.rule import Rule
+from recursiveobjects.terminalsymbol import TerminalSymbol
+from recursiveobjects.option import Option
 
 
 class TestRule(unittest.TestCase):
@@ -13,3 +15,12 @@ class TestRule(unittest.TestCase):
         test_rule = Rule(test_var, test_option)
         self.assertEqual(test_rule.variable, test_var)
         self.assertEqual(test_rule.options, test_option)
+
+    def test_generate_sentence_fragment(self):
+        """This function tests generate_sentence_fragment()"""
+        terminal = TerminalSymbol('test')
+        test_option = Option(1, [terminal])
+        test_rule = Rule('test', [test_option])
+        generator = test_rule.generate_sentence_fragment()
+        sentence_fragment = next(generator)
+        self.assertEqual(sentence_fragment, 'test')
